@@ -1,274 +1,275 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SUKUNA // VAULT DROP</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }html, body {
-  height: 100%;
-  background: #000;
-  font-family: 'Orbitron', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  overflow: hidden;
-  position: relative;
-  color: #ff4f00;
-}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-.intro-screen {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  animation: fadeOut 5s ease forwards 2.5s;
-}
+    html, body {
+      height: 100%;
+      background: #000;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+      color: #9c0000;
+    }
 
-.intro-text {
-  font-size: 2.2rem;
-  font-weight: bold;
-  text-align: center;
-  color: #ff4f00;
-  border-right: 3px solid #ff4f00;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  animation: typing 2.5s steps(30, end) forwards, blink 0.7s step-end infinite;
-}
+    .intro-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      animation: fadeOut 5s ease forwards 2.5s;
+    }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 24ch }
-}
+    .intro-text {
+      font-size: 2.3rem;
+      font-weight: bold;
+      text-align: center;
+      color: #9c0000;
+      border-right: 3px solid #9c0000;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 2.5s steps(30, end) forwards, blink 0.7s step-end infinite;
+    }
 
-@keyframes blink {
-  50% { border-color: transparent; }
-}
+    @keyframes typing { from { width: 0 } to { width: 22ch } }
+    @keyframes blink { 50% { border-color: transparent; } }
+    @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
 
-@keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
-}
+    .vault-wrapper {
+      background-color: #000;
+      border: 2px solid #9c0000;
+      box-shadow: 0 0 25px #9c0000;
+      padding: 20px;
+      max-width: 720px;
+      width: 100%;
+      text-align: center;
+      border-radius: 10px;
+      z-index: 10;
+    }
 
-.vault-wrapper {
-  background-color: #000;
-  border: 2px solid #ff4f00;
-  box-shadow: 0 0 25px #ff4f00;
-  padding: 20px;
-  max-width: 720px;
-  width: 100%;
-  text-align: center;
-  border-radius: 10px;
-  z-index: 10;
-}
+    .main-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #9c0000;
+      margin-bottom: 5px;
+    }
 
-.main-title {
-  font-size: 1.5rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #ff4f00;
-  margin-bottom: 5px;
-}
+    .subtitle {
+      font-size: 0.85rem;
+      color: #f5b3a3;
+      margin-bottom: 30px;
+    }
 
-.subtitle {
-  font-size: 0.85rem;
-  color: #ffae84;
-  margin-bottom: 30px;
-}
+    .stats-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
 
-.stats-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 25px;
-}
+    .stats-box {
+      flex: 1 1 45%;
+      border: 1px solid #9c0000;
+      padding: 12px;
+      font-size: 0.75rem;
+      text-align: left;
+      color: #f5b3a3;
+      box-shadow: 0 0 12px #9c0000;
+      border-radius: 6px;
+      min-width: 140px;
+    }
 
-.stats-box {
-  flex: 1 1 45%;
-  border: 1px solid #ff4f00;
-  padding: 12px;
-  font-size: 0.75rem;
-  text-align: left;
-  color: #ffb78d;
-  box-shadow: 0 0 12px #ff4f00;
-  border-radius: 6px;
-  min-width: 140px;
-}
+    .stats-box p {
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #9c0000;
+      font-size: 0.72rem;
+    }
 
-.stats-box p {
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #ff4f00;
-  font-size: 0.72rem;
-}
+    .vault-video {
+      border: 2px solid #9c0000;
+      box-shadow: 0 0 18px #9c0000;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
 
-.vault-video {
-  border: 2px solid #ff4f00;
-  box-shadow: 0 0 18px #ff4f00;
-  border-radius: 6px;
-  overflow: hidden;
-  margin: 20px 0;
-}
+    .vault-video video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-.vault-video video {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+    .drop-details {
+      font-size: 0.8rem;
+      color: #f5b3a3;
+      line-height: 1.6;
+    }
 
-.drop-details {
-  font-size: 0.8rem;
-  color: #ffae84;
-  line-height: 1.6;
-}
+    .drop-details span {
+      color: #9c0000;
+      font-weight: 700;
+    }
 
-.drop-details span {
-  color: #ff4f00;
-  font-weight: 700;
-}
+    .code-block {
+      margin-top: 20px;
+      padding: 10px 0;
+      border: 1px solid #9c0000;
+      font-size: 1.2rem;
+      font-weight: 800;
+      box-shadow: 0 0 12px #9c0000;
+      color: #9c0000;
+      border-radius: 6px;
+    }
 
-.code-block {
-  margin-top: 20px;
-  padding: 10px 0;
-  border: 1px solid #ff4f00;
-  font-size: 1.2rem;
-  font-weight: 800;
-  box-shadow: 0 0 12px #ff4f00;
-  color: #ff4f00;
-  border-radius: 6px;
-}
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
 
-.button-group {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 15px;
-}
+    .vault-button {
+      padding: 10px 18px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      box-shadow: 0 0 10px #9c0000;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-.vault-button {
-  padding: 10px 18px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0 0 10px #ff4f00;
-  cursor: pointer;
-  transition: 0.3s;
-}
+    .vault-button.use {
+      background: #fff;
+      color: #000;
+    }
 
-.vault-button.use {
-  background: #fff;
-  color: #000;
-}
+    .vault-button.claim {
+      background: #9c0000;
+      color: #fff;
+    }
 
-.vault-button.claim {
-  background: #ff4f00;
-  color: #fff;
-}
+    .footer {
+      font-size: 0.7rem;
+      color: #f5b3a3;
+      margin-top: 15px;
+    }
 
-.footer {
-  font-size: 0.7rem;
-  color: #ffb78d;
-  margin-top: 15px;
-}
+    .particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
 
-.particles {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
+    .particles span {
+      position: absolute;
+      display: block;
+      width: 6px;
+      height: 6px;
+      background: #9c0000;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: floatUp 10s linear infinite;
+    }
 
-.particles span {
-  position: absolute;
-  display: block;
-  width: 6px;
-  height: 6px;
-  background: #ff4f00;
-  border-radius: 50%;
-  opacity: 0.3;
-  animation: floatUp 10s linear infinite;
-}
+    @keyframes floatUp {
+      from {
+        transform: translateY(100vh) scale(0.6);
+        opacity: 0.2;
+      }
+      to {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0.6;
+      }
+    }
 
-@keyframes floatUp {
-  from {
-    transform: translateY(100vh) scale(0.6);
-    opacity: 0.2;
-  }
-  to {
-    transform: translateY(-10vh) scale(1);
-    opacity: 0.6;
-  }
-}
-
-@media (max-width: 500px) {
-  .stats-box {
-    flex: 1 1 100%;
-    text-align: center;
-  }
-  .main-title { font-size: 1.2rem; }
-  .code-block { font-size: 1rem; }
-  .vault-button { width: 100%; }
-  html, body {
-    padding: 10px;
-    align-items: flex-start;
-  }
-}
-
+    @media (max-width: 500px) {
+      .stats-box { flex: 1 1 100%; text-align: center; }
+      .main-title { font-size: 1.2rem; }
+      .code-block { font-size: 1rem; }
+      .vault-button { width: 100%; }
+      html, body {
+        padding: 10px;
+        align-items: flex-start;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="particles" id="particle-container"></div>  <div class="intro-screen">
+  <!-- Ember Particles -->
+  <div class="particles" id="particle-container"></div>
+
+  <!-- Intro Screen -->
+  <div class="intro-screen">
     <div class="intro-text">☣ CURSED ENERGY DETECTED...</div>
-  </div>  <div class="vault-wrapper">
-    <div class="main-title">👑 ACCESS GRANTED: SUKUNA’S CURSED REALM</div>
-    <div class="subtitle">💀 (RYOMEN SUKUNA) // SOUL VAULT</div><div class="stats-container">
-  <div class="stats-box">
-    <p>BANKAI CORE LEVEL:</p>
-    Curse Amplification: 99.9%<br>
-    Domain Barrier: MALEVOLENT SHRINE<br>
-    Finger Integration: 18/20
   </div>
-  <div class="stats-box">
-    <p>SPIRIT CHAIN:</p>
-    Vessel Control: Yuji Itadori<br>
-    Threat Rank: CALAMITY<br>
-    Cursed Technique: OPENED
+
+  <!-- Vault Wrapper -->
+  <div class="vault-wrapper">
+    <div class="main-title">👹 ACCESS GRANTED: RYOMEN SUKUNA</div>
+    <div class="subtitle">💢 (SUKUNA) // CURSED VAULT</div>
+
+    <div class="stats-container">
+      <div class="stats-box">
+        <p>BANKAI CORE LEVEL:</p>
+        Curse Amplification<br>
+        Domain Barrier<br>
+        Finger Integration
+      </div>
+      <div class="stats-box">
+        <p>SPIRIT CHAIN:</p>
+        Vessel Control<br>
+        Threat Rank: SS+<br>
+        Cursed Technique: Cleave/Dismantle
+      </div>
+    </div>
+
+    <div class="vault-video">
+      <video autoplay muted loop playsinline>
+        <source src="https://files.catbox.moe/ni6frv.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="drop-details">
+      USER ID: <span>DSX-001</span><br>
+      DROPS CLAIMED: <span>02 / 24</span><br>
+      PROTOCOL ENDS IN: <span id="timer">03:00:00</span>
+    </div>
+
+    <div class="code-block" id="drop-code">💸 SUKUNAX100</div>
+
+    <div class="button-group">
+      <button class="vault-button use" onclick="copyDropCode()">⚡ USE CODE</button>
+      <button class="vault-button claim" onclick="window.location.href='https://otakudripx.blinkstore.ai/'">📥 CLAIM ANOTHER DRIP</button>
+    </div>
+
+    <div class="footer">🔒 Vault Access Logs Are Classified</div>
   </div>
-</div>
 
-<div class="vault-video">
-  <video autoplay muted loop playsinline>
-    <source src="https://files.catbox.moe/84ozeu.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-<div class="drop-details">
-  USER ID: <span>DSX-118</span><br>
-  DROPS CLAIMED: <span>04 / 24</span><br>
-  PROTOCOL ENDS IN: <span id="timer">03:00:00</span>
-</div>
-
-<div class="code-block" id="drop-code">💸 SUKUNAX100</div>
-
-<div class="button-group">
-  <button class="vault-button use" onclick="copyDropCode()">⚡ USE CODE</button>
-  <button class="vault-button claim" onclick="window.location.href='https://otakudripx.blinkstore.ai/'">📥 CLAIM ANOTHER DRIP</button>
-</div>
-
-<div class="footer">🔒 Vault Access Logs Are Classified</div>
-
-  </div>  <script>
+  <!-- Scripts -->
+  <script>
+    // Ember particles
     const container = document.getElementById("particle-container");
     for (let i = 0; i < 60; i++) {
       const p = document.createElement("span");
@@ -278,6 +279,7 @@
       container.appendChild(p);
     }
 
+    // Countdown timer (3 hours)
     let seconds = 10800;
     const countdown = document.getElementById("timer");
     function updateTimer() {
@@ -290,6 +292,7 @@
     }
     setInterval(updateTimer, 1000);
 
+    // Clipboard copy
     function copyDropCode() {
       const code = document.getElementById("drop-code").textContent;
       navigator.clipboard.writeText(code).then(() => {
@@ -300,15 +303,16 @@
         msg.style.left = "50%";
         msg.style.transform = "translateX(-50%)";
         msg.style.background = "#1c1c1c";
-        msg.style.color = "#ff4f00";
+        msg.style.color = "#9c0000";
         msg.style.padding = "0.6rem 1.2rem";
-        msg.style.border = "1px solid #ff4f00";
+        msg.style.border = "1px solid #9c0000";
         msg.style.borderRadius = "10px";
         msg.style.zIndex = "1000";
-        msg.style.boxShadow = "0 0 10px #ff4f00";
+        msg.style.boxShadow = "0 0 10px #9c0000";
         document.body.appendChild(msg);
         setTimeout(() => msg.remove(), 2000);
       });
     }
-  </script></body>
+  </script>
+</body>
 </html>
